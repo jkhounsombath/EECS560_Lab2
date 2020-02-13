@@ -25,11 +25,12 @@ class linkedList
 		bool find(T value);
 		void FindNext(T value);
 		void print();
+		void removeHelper(std::string name);
 		bool findName(std::string name);
 		void printList();
-		void playerWithGoalCountEqualTo(int goals);
-		void playerWithGoalCountGreaterThan(int goals);
-		void PlayerWithGoalCountLessthan(int goals);
+		void playerWithGoalCountEqualToHelper(int goals);
+		void playerWithGoalCountGreaterThanHelper(int goals);
+		void PlayerWithGoalCountLessThanHelper(int goals);
 };
 #include "linked_list.cpp"
 #endif

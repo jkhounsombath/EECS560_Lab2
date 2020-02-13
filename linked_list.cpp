@@ -217,6 +217,29 @@ void linkedList<T>::print()
 }
 
 template <typename T>
+void linkedList<T>::removeHelper(std::string name)
+{
+	if(findName(name))
+	{
+		int target= 0;
+		Node<T>* front= m_front;
+		for(int i=1; i<=getLength(); i++)
+		{
+			if(front->getEntry().getName() == name)
+			{
+				target = i;
+			}
+			front= front->getNext();
+		}
+		remove(target);
+	}
+	else
+	{
+		std::cout <<"Player is not in the table\n";
+	}
+}
+
+template <typename T>
 bool linkedList<T>::findName(std::string name)
 {
 	Node<T>* front = m_front;
@@ -226,6 +249,7 @@ bool linkedList<T>::findName(std::string name)
 		{
 			return true;
 		}
+		front= front->getNext();
 	}
 	return false;
 }
@@ -236,25 +260,91 @@ void linkedList<T>::printList()
 	Node<T>* front= m_front;
 	while(front != nullptr && front->getNext() != nullptr)
 	{
-		std::cout<<front->getEntry().getName()<<":"<<front->getEntry.getGoals()<<" -> ";
+		std::cout<<front->getEntry().getName()<<""<<front->getEntry().getGoals()<<" -> ";
+		front=front->getNext();
 	}
-	std::cout<<front->getEntry().getName()<<":"<<front->getEntry.getGoals()<<std::endl;
+	if(front != nullptr)
+	{
+		std::cout<<front->getEntry().getName()<<""<<front->getEntry().getGoals();
+	}
 }
 
 template <typename T>
-void linkedList<T>::playerWithGoalCountEqualTo(int goals)
+void linkedList<T>::playerWithGoalCountEqualToHelper(int goals)
 {
-
+	Node<T>* front= m_front;
+	std::string tempString;
+	while(front != nullptr && front->getNext() != nullptr)
+	{
+		if(front->getEntry().getGoals() == goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString<<"\n";
+		}
+		front= front->getNext();
+	}
+	if(front != nullptr)
+	{
+		if(front->getEntry().getGoals() == goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString;
+			return;
+		}
+	}
 }
 
 template <typename T>
-void linkedList<T>::playerWithGoalCountGreaterThan(int goals)
+void linkedList<T>::playerWithGoalCountGreaterThanHelper(int goals)
 {
-
+	Node<T>* front= m_front;
+	std::string tempString;
+	while(front != nullptr && front->getNext() != nullptr)
+	{
+		if(front->getEntry().getGoals() >= goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString<<"\n";
+		}
+		front= front->getNext();
+	}
+	if(front != nullptr)
+	{
+		if(front->getEntry().getGoals() >= goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString;
+		}
+	}
 }
 
 template <typename T>
-void linkedList<T>::PlayerWithGoalCountLessthan(int goals)
+void linkedList<T>::PlayerWithGoalCountLessThanHelper(int goals)
 {
-
+	Node<T>* front= m_front;
+	std::string tempString;
+	while(front != nullptr && front->getNext() != nullptr)
+	{
+		if(front->getEntry().getGoals() <= goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString<<"\n";
+		}
+		front= front->getNext();
+	}
+	if(front != nullptr)
+	{
+		if(front->getEntry().getGoals() <= goals)
+		{
+			tempString= (front->getEntry().getName());
+			tempString.pop_back();
+			std::cout<<tempString;
+		}
+	}
 }
+

@@ -10,7 +10,8 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-
+		Executive executive(argv[1]);
+		executive.run();
 	}
 	return(0);
 }

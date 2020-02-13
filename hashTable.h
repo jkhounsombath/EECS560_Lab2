@@ -7,7 +7,7 @@ class hashTable
 {
 	private:
 		linkedList<player>* playerBucket= nullptr;
-		int bucketSize= 7;
+		int bucketSize= 5;
 	public:
 		hashTable();
 		~hashTable();
@@ -17,6 +17,6 @@ class hashTable
 		void printPlayerList();
 		void playerWithGoalCountEqualTo(int goals);
 		void playerWithGoalCountGreaterThan(int goals);
-		void PlayerWithGoalCountLessthan(int goals);
+		void PlayerWithGoalCountLessThan(int goals);
 };
 #endif
