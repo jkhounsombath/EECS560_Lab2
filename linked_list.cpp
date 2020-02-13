@@ -215,3 +215,46 @@ void linkedList<T>::print()
 	}
 	std::cout <<"NULL\n";
 }
+
+template <typename T>
+bool linkedList<T>::findName(std::string name)
+{
+	Node<T>* front = m_front;
+	while(front != nullptr)
+	{
+		if(front->getEntry().getName() == name)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+template <typename T>
+void linkedList<T>::printList()
+{
+	Node<T>* front= m_front;
+	while(front != nullptr && front->getNext() != nullptr)
+	{
+		std::cout<<front->getEntry().getName()<<":"<<front->getEntry.getGoals()<<" -> ";
+	}
+	std::cout<<front->getEntry().getName()<<":"<<front->getEntry.getGoals()<<std::endl;
+}
+
+template <typename T>
+void linkedList<T>::playerWithGoalCountEqualTo(int goals)
+{
+
+}
+
+template <typename T>
+void linkedList<T>::playerWithGoalCountGreaterThan(int goals)
+{
+
+}
+
+template <typename T>
+void linkedList<T>::PlayerWithGoalCountLessthan(int goals)
+{
+
+}

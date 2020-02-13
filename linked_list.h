@@ -5,6 +5,7 @@
 #include <stdexcept>
 
 #include "node.h"
+#include "player.h"
 
 template <typename T>
 class linkedList
@@ -24,6 +25,11 @@ class linkedList
 		bool find(T value);
 		void FindNext(T value);
 		void print();
+		bool findName(std::string name);
+		void printList();
+		void playerWithGoalCountEqualTo(int goals);
+		void playerWithGoalCountGreaterThan(int goals);
+		void PlayerWithGoalCountLessthan(int goals);
 };
 #include "linked_list.cpp"
 #endif
